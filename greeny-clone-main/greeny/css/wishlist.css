@@ -1,0 +1,13 @@
+/*========================================
+            WISHLIST PAGE STYLE
+=========================================*/
+tr td:nth-child(5) p a {
+    text-decoration: none;
+    color: rgb(17, 150, 67);
+    font-weight: 500;
+}
+@media (max-width: 1199px) {
+    .wishlist-part .container {
+        max-width: 100%;
+    }
+}

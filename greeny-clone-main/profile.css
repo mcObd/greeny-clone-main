@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+header{
+  background-color: white;
+}
+body{
+  background-color: #f0f0f0;
+}
+.profile-section{
+  width: 100%;
+}
+.container-head{
+  background-color: #f5f5f5;
+  background-image: linear-gradient(to left, rgba(6, 23, 56, 0.6), rgba(17, 151, 68, 0.6)), 
+  url(./greeny/images/single-banner.jpg);
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-position: center center;
+  color: white;
+  padding: 7%;
+  width: 100%;
+  height: 10%; 
+}
+.content h1{
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+  /* padding-left: 5%;   */
+}
+.content h3{
+  font-size: 1rem;
+  /* font-weight: 600; */
+  color: white;
+  text-align: center;
+}
+.profile{
+  padding: 80px 0 0 0;
+  padding-left: 20px;
+}
+.profile-container{
+  background: white;
+  border-radius: 6px;
+  padding: 25px ;
+  width: 93%;
+  margin: 0 auto;
+  /* height: 35vh; */
+}
+.profile-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+}
+.profile-head::before{
+  position: absolute;
+  content: "";
+  /* bottom: -1px; */
+  margin-top: 78px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #119744;
+}
+.profile-head h3{
+  font-size: 1.2rem;
+  color: #39404a;
+  font-weight: 500;
+}
+.edit-profile{
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: transparent;
+  background-color: #ddffd5;
+  color: #119744;
+  font-weight: 500;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+.edit-profile:hover{
+  background-color: #119744;
+  color: white;
+}
+.profile-content{
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  /* border: 2px solid black; */
+  /* padding-right: 20px; */
+}
+.profile-image{
+  width: 16%;
+  padding-left: 30px;
+  /* height: 20%; */
+}
+.profile-image a{
+  border: 2px solid #119744;
+  border-radius: 50%;
+  height: 84px;
+  width: 84px;
+  display: flex;
+}
+.profile-image a img{
+  width: 80px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.profile-info{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  width: 100%;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+}
+.name{
+  color: #555555;
+  font-weight: 450;
+  margin-bottom: 15px;
+}
+#profile-name, #profile-email{
+  width: 100%;
+  height: 45px;
+  border-radius: 6px;
+  padding: 5px 20px;
+  background: #f5f5f5;
+  border: 1px solid #e8e8e8;
+  color: #555555;
+}
+
+.password{
+  padding: 10px 14px;
+  border-radius: 6px;
+  height: 45px;
+  margin-top: 30px;
+  border: transparent;
+  color: white;
+  background-color: #119744;
+  font-weight: 500;
+  transition: all .3s ease;
+  cursor: pointer;
+  width: 15%;
+}
+.password a{
+  text-decoration: none;
+  color: white;
+}
+.password:hover{
+  background-color: #ddffd5;
+  color: #119744;
+}
+.password:hover a{
+  color: #119744;
+}
+
+/* Modal */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+}
+.edit-form, #contact-name, #contact-phone, #edit-contact-title, #edit-contact-phone{
+  margin-bottom: 20px;
+}
+.modal-content h2{
+  color: #39404a;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.close {
+  position: absolute;
+  top: -4%;
+  right: -2%;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 2000;
+  box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.2);
+}
+
+.close:hover{
+  color: white;
+  background-color: #119744;
+  cursor: pointer;
+}
+.no-scroll {
+  overflow: hidden;
+}
+#modal-name, #modal-email, #modal-file, #contact-name, #contact-phone, #edit-contact-title, #edit-contact-phone, #edit-address-title, #edit-address{
+  width: 100%;
+  height: 45px;
+  border-radius: 6px;
+  padding: 5px 20px;
+  color: #555555;
+  background: #f5f5f5;
+  border: 1px solid #e8e8e8;
+  outline: none;
+  margin-top: 10px;
+}
+.save-profile, .save-contact, .save-address, .save-card{
+  width: 100%;
+  height: 45px;
+  border: transparent;
+  border-radius: 6px;
+  color: white;
+  background-color: #119744;
+  text-transform: uppercase
+}
+
+
+
+/* CONTACT SECTION */
+.contact{
+  padding: 35px 0;
+  padding-left: 20px;
+}
+.contact-container,.address-container, .payment-container{
+  background: white;
+  border-radius: 6px;
+  padding: 25px;
+  width: 93%;
+  margin: 0 auto;
+  /* height: 35vh; */
+}
+.contact-head, .address-head, .payment-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+}
+.contact-head::before,.address-head::before,.payment-head::before{
+  position: absolute;
+  content: "";
+  /* bottom: -1px; */
+  margin-top: 78px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #119744;
+}
+.contact-head h3,.address-head h3,.payment-head h3{
+  font-size: 1.2rem;
+  color: #39404a;
+  font-weight: 500;
+}
+.add-contact,.add-address, .add-card{
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: transparent;
+  background-color: #ddffd5;
+  color: #119744;
+  font-weight: 500;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+.add-contact:hover, .add-address:hover, .add-acard:hover{
+  background-color: #119744;
+  color: white;
+}
+.contact-content, .address-content, .payment-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; 
+  overflow-x: auto;
+  padding-bottom: 15px; 
+  scroll-snap-type: x mandatory; 
+}
+
+.contact-card, .address-card, .payment-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  background: #f5f5f5;
+  border: 1px solid #e8e8e8;
+  margin: 25px 0 0 0;
+  position: relative;
+  border-radius: 8px;
+  flex: 1;
+  width: 400px;
+}
+
+.contact-content::-webkit-scrollbar, 
+.address-content::-webkit-scrollbar, 
+.payment-content::-webkit-scrollbar {
+  display: none; 
+}
+.contact-card.active, .address-card.active, .payment-card.active{
+  background: #ddffd5;
+  border-color: #119744;
+}
+.card-top h5, .address-top h5 , .payment-top h5{
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555555;
+  padding-bottom: 15px;
+}
+.card-top p, .address-top p, .payment-top p{
+  color: #555555;
+}
+
+.cardnav{
+  list-style: none;
+  display: none;
+  position: absolute;
+  right: 8%;
+  transition: all 0.3s ease;
+}
+.contact-card:hover .cardnav, .address-card:hover .cardnav, .payment-card:hover .cardnav{
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* position: relative; */
+}
+.cardnav .edit{
+  color: #119744;
+  padding: 8px;
+  background-color: white;
+  border: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.edit:hover{
+  color: white;
+  background-color: #119744;
+}
+.cardnav .edit2{
+  color: red;
+  padding: 8px;
+  background-color: white;
+  border: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.edit2:hover{
+  color: white;
+  background-color: red;
+}
+
+#contact-title, #address-title, #Address, #cardNumber, #cardHolder, #expiryDate, #cvv{
+  width: 100%;
+  height: 45px;
+  border-radius: 6px;
+  padding: 5px 20px;
+  color: #555555;
+  background: #f5f5f5;
+  border: 1px solid #e8e8e8;
+  outline: none;
+  margin: 10px 0;
+}
+.address{
+  padding-left: 20px;
+}
+.payment{
+  margin: 30px 0;
+  padding-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and  (max-width: 1279px){
+  .profile-image{
+    width: 15%;
+  }
+ 
+  .profile-info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    width: 100%;
+  }
+  .password{
+   width: 20%;
+  }
+ 
+  
+}
+
+@media screen and  (max-width: 1024px){
+  .profile-container, .contact-container,.address-container,.payment-container{
+    width: 71%;
+    padding: 20px;
+  }
+  .profile-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contact-content,.address-content,.payment-content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    /* width: 100%; */
+  }
+  .contact-card,.address-card,.payment-card{
+    width: 100%;
+  }
+  .profile-image{
+    padding: 0;
+  }
+  .password{
+    width: 100%;
+    margin-top: 10px;
+   }
+}
+
+@media screen and  (max-width: 768px){
+  .profile-container, .contact-container,.address-container,.payment-container{
+    width: 91%;
+    /* padding: 20px; */
+  }
+  .profile-info{
+    display: flex;
+    flex-direction: column;
+  }
+  .profile-head{
+    padding-right: 5px;
+  }
+  .password{
+    width: 100%;
+    margin-top: 25px;
+  }
+  .profile, .contact, .address, .payment{
+    padding-left: 0;
+  }
+
+  .modal-content{
+    margin: 25% auto;
+  }
+ 
+}
+
+
+
+@media screen and  (max-width: 480px){
+  .profile-container, .contact-container,.address-container,.payment-container{
+    width: 95%;
+  }
+  .contact-content,.address-content,.payment-content{
+    display: grid;
+    grid-template-columns: 1fr;
+    /* width: 100%; */
+  }
+  .profile{
+    padding-left: 0;
+  }
+  .modal-content{
+    margin: 30% auto;
+  }
+
+  #modal-name, #modal-email, #modal-file{
+    padding-left: 9px;
+  }
+}
